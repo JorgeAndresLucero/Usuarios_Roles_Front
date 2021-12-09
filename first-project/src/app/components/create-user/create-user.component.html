@@ -1,0 +1,33 @@
+<mat-card>
+<form [formGroup] ="addUserForm"> 
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input formControlName ="nombre"  matInput required>
+    </mat-form-field></td>
+  </table>
+
+  <section class="example-section">
+      <label class="example-margin">Activo:</label>
+      <mat-radio-group formControlName ="activo" >
+        <mat-radio-button class="example-margin" value="S">S</mat-radio-button>
+        <mat-radio-button class="example-margin" value="N">N</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <h4>Rol</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Roles</mat-label>
+      <select formControlName ="rol" matNativeControl required formControlName ="rol">
+        <option value=1>Administrador</option>
+        <option value=2>Auditor</option>
+        <option value=3>Auxiliar</option>
+      </select>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" (click)= "guardarUsuario()">Guardar</button>
+</form>
+</mat-card>
+  
+
+  

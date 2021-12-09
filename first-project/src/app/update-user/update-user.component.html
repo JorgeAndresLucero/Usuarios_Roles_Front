@@ -1,0 +1,42 @@
+<mat-card>
+<form [formGroup] ="updateUserForm"> 
+    <mat-form-field class="example-full-width" appearance="fill" >
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="Identificador" formControlName ="id_usuario" required  type="number">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input formControlName ="nombre"  matInput required>
+      </mat-form-field></td>
+    </table>
+  
+    <section class="example-section">
+        <label class="example-margin">Activo:</label>
+        <mat-radio-group formControlName ="activo" >
+          <mat-radio-button class="example-margin" value="S" [checked]="true">S</mat-radio-button>
+          <mat-radio-button class="example-margin" value="N">N</mat-radio-button>
+        </mat-radio-group>
+      </section>
+  
+      <h4>Rol</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Roles</mat-label>
+        <select formControlName ="rol" matNativeControl required formControlName ="rol">
+          <option value=1>Administrador</option>
+          <option value=2>Auditor</option>
+          <option value=3>Auxiliar</option>
+        </select>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="accent" (click)= "actualizarUsuario()">Actualizar</button>
+      </div>
+      <br>
+      <div>
+        <button mat-raised-button color="warn" (click)= "eliminarUsuario()">Eliminar</button>
+      </div>    
+  </form>
+  </mat-card>
+    
+  
